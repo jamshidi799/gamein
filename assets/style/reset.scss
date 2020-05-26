@@ -1,0 +1,15 @@
+@font-face {
+  font-family: IRANYekan;
+  src: url('/assets/fonts/IRANYekan.ttf');
+}
+* {
+  font-family: IRANYekan;
+  text-align: right;
+  direction: rtl;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
