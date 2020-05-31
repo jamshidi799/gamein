@@ -13,15 +13,15 @@ import Footer from './components/common/Footer';
 function App() {
   return (
     <Provider store={store}>
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/register" component={Signup} />
           <Route exact path="/login" component={Signin} />
         </Switch>
+        {/* <Footer /> */}
       </BrowserRouter>
-      <Footer />
     </Provider>
   );
 }

@@ -1,32 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
   render() {
     return (
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="/">
+      <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+        <a className="navbar-brand" href="/">
           گیمین
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/">
+        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
                 بلاگ
-              </a>
+              </Link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/">
+            <li className="nav-item">
+              <Link to="/login" className="nav-link">
                 ورود
-              </a>
+              </Link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/">
+            <li className="nav-item">
+              <Link to="/register" className="nav-link">
                 ثبت نام
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
