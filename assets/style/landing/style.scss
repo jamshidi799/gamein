@@ -1,3 +1,146 @@
-body {
-  background-color: lightgray;
+#root{
+  height: 100vh;
+  .headtop{
+    position: relative;
+    .topNav{
+      position: absolute;
+      top: 0;
+      left: 0;
+      ul{
+        list-style: none;
+        li{
+          border-radius: 5px;
+          a{
+            color: white;
+            &:hover{
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .gptitle{
+    background-image: radial-gradient(rgb(179, 71, 179) , purple);
+    div{
+      position: relative;
+    }
+    .gp-pic{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% , -50%);
+    }
+  }
+  .sponser{
+    background-color: rgb(77, 3, 77);
+    figure{
+      height: 70px;
+    img{
+      height: 70px;
+    }
+  }
+}
+  .about{
+    background-color: rebeccapurple;
+    div{
+      margin: 50px 0px;
+      transform: translateX(100%);
+      transition: 1s;
+      opacity: 0;
+    }
+  }
+  .scoreWraper{
+    div{
+      background-color: purple;
+      justify-content: space-evenly;
+      div{
+        .score{
+          color: white;
+          font-size: 40px;
+        }
+        .label{
+          color: white;
+        }
+      }
+    }
+  }
+  .cmshow{
+    background-color: rgb(48, 10, 48);
+    h3{
+      color: rgb(170, 103, 170);
+      font-size: 34px;
+    }
+    #cm{
+      transition: 1s;
+      box-shadow: 0px 0px 30px purple;
+      background-color: #fff;
+      border-radius: 14px;
+      .show-cm{
+        opacity: 1 !important;
+        transition: 1s;
+      }
+      .hidden-cm{
+        opacity: 0;
+      }
+      #userN{
+        width: 90%;
+        text-align: center;
+        color: rgb(194, 26, 194);
+        font-size: 22px;
+        font-weight: bold;
+        padding: 15px;
+        margin: 10px 0;
+        border-bottom: 1px dotted;
+      }
+      #userCm{
+        color: rgb(80, 5, 80);
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+  }
+  #awards{
+    background-color: rgb(31, 16, 31);
+    .sc-1{
+      transform: scale(1) !important;
+    }
+    .awards{
+      transition: 1s;
+      transform: scale(0);
+      h2{
+        color: white;
+      }
+      :nth-of-type(odd){
+        margin-top: 15px;
+      }
+    }
+  }
+  #anothers{
+    background-color: rgb(31 ,16 , 31);
+    p{
+      color: white;
+      font-size: 20px;
+    }
+  }
+}
+#trX-0{
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+/*desktop*/
+@media screen and (min-width:992px){
+  .awards:nth-of-type(n+2){
+    margin-top: 120px !important;
+  }
+  .awards:nth-of-type(1){
+    order: 2;
+  }
+  .awards:nth-of-type(2){
+    order: 1;
+  }
+  .awards:nth-of-type(3){
+    order: 3;
+  }
 }
