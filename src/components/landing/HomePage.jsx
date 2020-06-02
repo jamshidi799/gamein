@@ -5,6 +5,7 @@ import About from './comp/About'
 import Scores from './comp/Scores';
 import CommentShow from './comp/CommentShow';
 import Award from './comp/Award';
+import Event from './comp/Events';
 
 export default class HomePage extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class HomePage extends Component {
         <Sponser />
         <About />
         <Scores />
+        <Event />
         <CommentShow />
         <Award />
       </section>
