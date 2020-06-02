@@ -30,10 +30,10 @@ export default class Sponser extends Component{
     }
     render(){
       return(
-        <section className="sponser p-3 d-flex justify-content-center align-items-center">
+        <section className="sponser p-3 d-flex justify-content-center align-items-center flex-wrap">
             {this.state.sponservalue.map((x)=>{
                 return(
-                    <figure className="sponser-pic p-3 flex-wrap" key={x.id}>
+                    <figure className="sponser-pic p-3" key={x.id}>
                     <a href={x.Url} target="_blank">
                     <img src={x.image} alt={x.imagealt}/>
                     </a>
