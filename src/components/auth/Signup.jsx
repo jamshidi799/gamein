@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { DatePicker } from 'jalali-react-datepicker';
-import { RangeDatePicker } from 'jalali-react-datepicker';
+// import { register } from '../../actions/auth';
+// import { DatePicker } from 'jalali-react-datepicker';
+// import { RangeDatePicker } from 'jalali-react-datepicker';
 
 class Signup extends Component {
   state = {
@@ -9,9 +10,9 @@ class Signup extends Component {
     last_name: '',
     username: '',
     password: '',
+    email: '',
     repeat_password: '',
     profile: {
-      email: '',
       university: '',
       birth_date: '',
       phone_number: '',
@@ -31,7 +32,7 @@ class Signup extends Component {
   onSubmit = e => {
     e.preventDefault();
     const user = { ...this.state };
-    // this.props.login(userData);
+    // register(user);
   };
 
   render() {
@@ -77,14 +78,7 @@ class Signup extends Component {
             <label>رمز عبور</label>
             <input type="password" className="form-control" name="password" value={this.state.password} required onChange={this.onChange} />
             <label>ایمیل</label>
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              value={this.state.profile.email}
-              required
-              onChange={this.onProfileFieldsChange}
-            />
+            <input type="email" className="form-control" name="email" value={this.state.email} required onChange={this.onChange} />
             <label>رشته</label>
             <input
               type="text"

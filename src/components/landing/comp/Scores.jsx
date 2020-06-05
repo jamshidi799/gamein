@@ -8,6 +8,7 @@ let flag = 0
 export default class Scores extends Component{
     constructor(){
         super()
+        this.handleScroll = this.handleScroll.bind(this)
         this.state = {
             scoreValues : [
                 {
