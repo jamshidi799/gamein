@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { register } from '../../actions/auth';
+import { Paper } from '@material-ui/core';
 // import { DatePicker } from 'jalali-react-datepicker';
 // import { RangeDatePicker } from 'jalali-react-datepicker';
 
@@ -38,9 +39,9 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-5">
+      <Paper elevation={3} className="container register-block">
+        <div className="row justify-content-md-between">
+          <div className="col-md-5 register-form">
             <div className="form-row">
               <div className="form-group col-md-6">
                 <label>نام</label>
@@ -143,9 +144,9 @@ class Signup extends Component {
               ثبت نام
             </button>
           </div>
-          <div className="col-7 register-img"></div>
+          <div className="col-md-6 register-img"></div>
         </div>
-      </div>
+      </Paper>
     );
   }
 }

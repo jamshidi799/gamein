@@ -23,3 +23,27 @@
     min-width: 300px;
   }
 }
+
+.register-block {
+  margin-top: 5vh;
+  border-radius: 20px;
+  max-width: 1000px;
+  background-color: rosybrown;
+  @media screen and (max-width: '768px') {
+    width: 80vw;
+    max-width: 400px;
+  }
+  .register-form {
+    padding: 30px 25px 20px 0px;
+    @media screen and (max-width: '768px') {
+      padding-left: 25px;
+    }
+  }
+  .register-img {
+    width: 100%;
+    background-image: url(../img/2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
