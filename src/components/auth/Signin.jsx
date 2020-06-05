@@ -1,45 +1,79 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import LockIcon from '@material-ui/icons/Lock';
 
-import { login } from '../../actions/auth';
+import img from '../../assets/img/2.png';
 
-class Signin extends Component {
-  state = {
-    username: '',
-    password: '',
+const CssTextField = withStyles({
+  root: {
+    '& label': {
+      right: '0px',
+    },
+    '& label.Mui-focused': {
+      color: 'green',
+      right: '-50px',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'red',
+      },
+      '&:hover fieldset': {
+        borderColor: 'yellow',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'green',
+      },
+    },
+  },
+})(TextField);
+
+export default function Signin() {
+  const [state, setState] = useState({ username: '', password: '' });
+
+  const onChange = e => {
+    setState({ [e.target.name]: e.target.value });
   };
 
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  onSubmit = e => {
+  const onSubmit = e => {
     e.preventDefault();
     const { username, password } = this.state;
     this.props.login(username, password);
   };
-
-  render() {
-    return (
-      <div className="container form">
-        <div className="form-row">
-          <div className="form-group col-md-12">
-            <label>نام کاربری</label>
-            <input type="text" className="form-control" name="username" value={this.state.username} required onChange={this.onChange} />
+  return (
+    <div className="d-flex justify-content-center">
+      <div className="form">
+        <div className="row p-3 field">
+          <div className="col-1 mt-3">
+            <AccountCircle />
           </div>
-          <div className="form-group col-md-12">
-            <label>پسورد</label>
-            <input type="password" className="form-control" name="password" value={this.state.password} required onChange={this.onChange} />
+          <div className="col-10">
+            <CssTextField fullWidth id="outlined-basic" label="نام کاربری" name="username" onChange={onChange} value={state.username} />
           </div>
         </div>
-        <button type="submit" className="btn btn-primary" onClick={this.onSubmit}>
-          ثبت نام
-        </button>
+
+        <div className="row p-3 field">
+          <div className="col-1 mt-3">
+            <LockIcon />
+          </div>
+          <div className="col-10">
+            <CssTextField
+              fullWidth
+              type="password"
+              id="outlined-basic"
+              label="پسورد"
+              onChange={onChange}
+              name="password"
+              value={state.password}
+            />
+          </div>
+        </div>
+        <button className="btn">ورود</button>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-const mapStateToProps = state => ({});
-
-export default connect(mapStateToProps, { login })(Signin);
